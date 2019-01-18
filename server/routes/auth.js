@@ -1,9 +1,10 @@
 const express = require('express')
-const router = express.router
+const router = express.Router()
 const UserModel = require('../models/userModel')
 
-router.use(()=> {
-    console.log('auth was called!')
+router.use(function timeLog(req, res, next){
+    console.log('Incoming : ANGULAR ----> Time: ', Date.now())
+    next()
 })
 
 router.post('/', (req, res, next) => {
@@ -15,3 +16,5 @@ router.post('/', (req, res, next) => {
         user?res.json({valid: 1, user}) : res.json({valid: 0})
     })
 })
+
+module.exports = router;
