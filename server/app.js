@@ -26,7 +26,7 @@ app.use(helmet())
 const listOfRoutes = require('./routes')
 app.use('/api', listOfRoutes.routesApi)
 app.use('/angular', listOfRoutes.routesAngular)
-app.use('/auth', listOfRoutes.authRouter)
+app.use('/auth', listOfRoutes.routesAuth)
 
 app.listen(port, ()=>{
     console.log('Server is UP. PORT : '+port)
