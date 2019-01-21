@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
+const dateFormat = require('dateformat')
 
 router.use(function timeLog(req, res, next){
-    console.log('Incoming : ANGULAR ----> Time: ', Date.now())
+    console.log('Incoming : ANGULAR ----> Time: ', dateFormat())
     next()
 })
 

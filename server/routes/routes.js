@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const controller = require('../controllers')
+const dateFormat = require('dateformat')
 
 router.use(function timeLog(req, res, next){
-    console.log('Incoming : API ----> Time: ', Date.now())
+    console.log('Incoming : API ----> Time: ', dateFormat())
     next()
 })
 
